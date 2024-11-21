@@ -119,15 +119,15 @@
                   <span>Paper</span>
                 </a>
               </span>
-<!--              <span class="link-block">-->
-<!--                <a href="https://arxiv.org/abs/2011.12948"-->
-<!--                   class="external-link button is-normal is-rounded is-dark">-->
-<!--                  <span class="icon">-->
-<!--                      <i class="ai ai-arxiv"></i>-->
-<!--                  </span>-->
-<!--                  <span>arXiv</span>-->
-<!--                </a>-->
-<!--              </span>-->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2411.09823"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
 <!--              <span class="link-block">-->
 <!--                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"-->
 <!--                   class="external-link button is-normal is-rounded is-dark">-->
@@ -166,7 +166,7 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video id="teaser" autoplay loop playsinline controls height="100%">
-        <source src="./static/videos/architect-teaser.mp4" type="video/mp4">
+        <source src="./static/videos/architect-teaser1.mp4" type="video/mp4">
       </video>
     </div>
   </div>
@@ -206,85 +206,104 @@
   </div>
 </section>
 
-<!-- <section class="hero is-light is-small">
+<div class="container is-full-hd">
+  <hr class="solid">
+</div>
+
+<section class="section" id="pipeline">
+  <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Pipeline</h2>
+      <p>
+        Our pipeline begins by rendering a photo-realistic image in a simulated empty scene with only a static background (like walls and floors).
+        We then use this image as a template for inpainting the foreground using 2D diffusion models, with the inpainting mask covering the majority of the image.
+        Here, we have access to some crucial information: ground-truth depth and camera parameters.
+        Subsequently, we utilize visual recognition models to segment the 2D image to ground the semantics and geometric information of each object.
+        Then we use a depth estimation model to estimate the depth of the inpainted image. To make the depth estimation more accurate, we align the depth of the unmasked part of the image with the ground-truth depth obtained in the simulation.
+        After that, we can lift the depth into 3D space and place the large furniture according to the 3D bounding boxes of each object, either by retrieving them from large-scale asset databases or generating them using image-to-3D generative models.
+      </p>
+      <br>
+      <br>
+  </div>
+
+  <div class="video-container">
+    <video id="videopipe" autoplay muted loop>
+      <source src="./static/videos/architect-teaser2.mp4" type="video/mp4">
+    </video>
+  </div>
+
+</section>
+
+<div class="container is-full-hd">
+  <hr class="solid">
+</div>
+
+<section class="section" id="manipulate">
+  <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Manipulation</h2>
+      <p>
+        Since all large and small objects are placed in the scene separately, they become naturally interactive when powered by a physics engine, opening up opportunities to collect large-scale robot manipulation data in complex scenarios.
+      </p>
+      <br>
+      <br>
+  </div>
+
+  <div class="video-container">
+    <video id="videomanipulate" autoplay muted loop>
+      <source src="./static/videos/architect-teaser3.mp4" type="video/mp4">
+    </video>
+  </div>
+
+</section>
+
+<section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-result_video_0-9999">
           <video poster="" id="result_video_0-9999" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/result_video_0-9999.mp4"
+            <source src="./static/videos/hospital.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-result_video_0-10021">
           <video poster="" id="result_video_0-10021" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/result_video_0-10021.mp4"
+            <source src="./static/videos/house.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-result_video_0-10051">
           <video poster="" id="result_video_0-10051" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/result_video_0-10051.mp4"
+            <source src="./static/videos/shoestore.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-result_video_0-10164">
           <video poster="" id="result_video_0-10164" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/result_video_0-10164.mp4"
+            <source src="./static/videos/gamestore.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-result_video_0-10728">
           <video poster="" id="result_video_0-10728" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/result_video_0-10728.mp4"
+            <source src="./static/videos/bookstore.mp4.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-result_video_1-10011">
           <video poster="" id="result_video_1-10011" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/result_video_1-10011.mp4"
+            <source src="./static/videos/grocery1.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-result_video_1-10028">
           <video poster="" id="result_video_1-10028" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/result_video_1-10028.mp4"
+            <source src="./static/videos/restaurant.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-result_video_1-10059">
           <video poster="" id="result_video_1-10059" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/result_video_1-10059.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-result_video_1-10297">
-          <video poster="" id="result_video_1-10297" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/result_video_1-10297.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-result_video_1-10333">
-          <video poster="" id="result_video_1-10333" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/result_video_1-10333.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-result_video_1-10734">
-          <video poster="" id="result_video_1-10734" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/result_video_1-10734.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-result_video_2-10209">
-          <video poster="" id="result_video_2-10209" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/result_video_2-10209.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-result_video_2-10325">
-          <video poster="" id="result_video_2-10325" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/result_video_2-10325.mp4"
+            <source src="./static/videos/office.mp4"
                     type="video/mp4">
           </video>
         </div>
@@ -292,7 +311,6 @@
     </div>
   </div>
 </section>
- -->
 
 
 
