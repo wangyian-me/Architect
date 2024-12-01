@@ -89,7 +89,8 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">ARCHITECT: Generating Vivid and Interactive 3D Scenes with Hierarchical 2D Inpainting</h1>
-           <div class="is-size-5 publication-authors">
+          <h3 class="title is-4 conference-authors"><a target="_blank" href="https://neurips.cc">NeurIPS 2024</a></h3>
+          <div class="is-size-5 publication-authors">
             <a href="https://wangyian-me.github.io" class="author-block">Yian Wang</a><sup>1</sup>,
             <a href="https://link-to-author-2-profile.com" class="author-block">Xiaowen Qiu</a><sup>1</sup>,
             <a href="https://jiagengliu02.github.io" class="author-block">Jiageng Liu</a><sup>1</sup>,
@@ -104,7 +105,7 @@
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>Umass Amherst</span>
             <span class="author-block"><sup>2</sup>SJTU</span>
-            <span class="author-block"><sup>3</sup>MIT</span>
+            <span class="author-block"><sup>3</sup>MIT CSAIL</span>
             <span class="author-block"><sup>4</sup>CMU</span>
           </div>
 
@@ -162,15 +163,18 @@
   </div>
 </section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay loop playsinline controls height="100%">
-        <source src="./static/videos/architect-teaser2.mp4" type="video/mp4">
-      </video>
-    </div>
-  </div>
-</section>
+
+  <section class="section" style="padding: 0">
+      <div class="container is-max-desktop">
+          <!-- Abstract. -->
+          <div class="columns is-centered has-text-centered">
+              <video poster="" id="" autoplay controls loop width="100%" playbackRate=2.0 style="border-radius: 5px;">
+                  <source src="./static/videos/architect-teaser2.mp4" type="video/mp4">
+              </video>
+          </div>
+      </div>
+  </section>
+
 
 
 <section class="section">
@@ -210,106 +214,100 @@
   <hr class="solid">
 </div>
 
-<section class="section" id="pipeline">
-  <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Pipeline</h2>
-      <p>
-        Our pipeline begins by rendering a photo-realistic image in a simulated empty scene with only a static background (like walls and floors).
-        We then use this image as a template for inpainting the foreground using 2D diffusion models, with the inpainting mask covering the majority of the image.
-        Here, we have access to some crucial information: ground-truth depth and camera parameters.
-        Subsequently, we utilize visual recognition models to segment the 2D image to ground the semantics and geometric information of each object.
-        Then we use a depth estimation model to estimate the depth of the inpainted image. To make the depth estimation more accurate, we align the depth of the unmasked part of the image with the ground-truth depth obtained in the simulation.
-        After that, we can lift the depth into 3D space and place the large furniture according to the 3D bounding boxes of each object, either by retrieving them from large-scale asset databases or generating them using image-to-3D generative models.
-      </p>
-      <br>
-      <br>
-  </div>
+<section class="section">
+    <div class="container is-max-widescreen">
+        <div class="rows">
+            <div class="rows is-centered ">
+                <div class="row is-full-width">
 
-  <div class="video-container">
-    <video id="videopipe" autoplay muted loop>
-      <source src="./static/videos/architect-teaser1.mp4" type="video/mp4">
-    </video>
-  </div>
 
+                    <h2 class="title is-3" style="display: flex; justify-content: center; align-items: center;"><span class="dvima">Architect Pipeline</span></h2>
+                    <!-- <img src="videos/pipeline.m4v" class="interpolation-image" alt=""
+                        style="display: block; margin-left: auto; margin-right: auto; max-width: 80%;" /> -->
+                    <span style="font-size: 125%">
+                        <span style="font-weight: bold">Architect is a generative framework that creates complex and realistic 3D embodied environments leveraging diffusion-based 2D image inpainting.</span>
+                    </span>
+                    <br>
+                        <video autoplay controls muted loop playsinline height="100%">
+                          <source src="./static/videos/architect-teaser1.mp4"
+                                  type="video/mp4">
+                        </video>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <div class="container is-full-hd">
   <hr class="solid">
 </div>
 
-<section class="section" id="manipulate">
-  <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Manipulation</h2>
-      <p>
-        Since all large and small objects are placed in the scene separately, they become naturally interactive when powered by a physics engine, opening up opportunities to collect large-scale robot manipulation data in complex scenarios.
-      </p>
-      <br>
-      <br>
-  </div>
 
-  <div class="video-container">
-    <video id="videomanipulate" autoplay muted loop>
-      <source src="./static/videos/architect-teaser3.mp4" type="video/mp4">
-    </video>
-  </div>
+<section class="section">
+    <div class="container is-max-widescreen">
+        <div class="rows">
+            <div class="rows is-centered ">
+                <div class="row is-full-width">
 
+
+                    <h2 class="title is-3" style="display: flex; justify-content: center; align-items: center;"><span class="dvima">Manipulation</span></h2>
+                    <!-- <img src="videos/pipeline.m4v" class="interpolation-image" alt=""
+                        style="display: block; margin-left: auto; margin-right: auto; max-width: 80%;" /> -->
+                        <br>
+                        <span style="font-size: 125%">
+                        <span style="font-weight: bold">Since all large and small objects are placed in the scene separately, they become naturally interactive when powered by a physics engine, opening up opportunities to collect large-scale robot manipulation data in complex scenarios.</span>
+                        </span>
+                        <video autoplay controls muted loop playsinline height="100%">
+                          <source src="./static/videos/architect-teaser3.mp4"
+                                  type="video/mp4">
+                        </video>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-result_video_0-9999">
-          <video poster="" id="result_video_0-9999" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/hospital.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-result_video_0-10021">
-          <video poster="" id="result_video_0-10021" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/house.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-result_video_0-10051">
-          <video poster="" id="result_video_0-10051" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shoestore.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-result_video_0-10164">
-          <video poster="" id="result_video_0-10164" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/gamestore.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-result_video_0-10728">
-          <video poster="" id="result_video_0-10728" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/bookstore.mp4.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-result_video_1-10011">
-          <video poster="" id="result_video_1-10011" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/grocery1.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-result_video_1-10028">
-          <video poster="" id="result_video_1-10028" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/restaurant.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-result_video_1-10059">
-          <video poster="" id="result_video_1-10059" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/office.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
+<section class="section">
+      <div class="container is-max-widescreen">
+          <div class="rows">
+              <div class="rows is-centered ">
+                  <div class="row is-full-width">
+                      <h2 class="title is-3"><span class="dvima">Generated Large Scenarios</span></h2>
+                      <p style="font-size: 125%">
+                          Please select an image below to view the results.
+                      </p>
+                  </div>
+              </div>
+          </div>
+          <br>
+          <div class="columns" style="align-items: end;">
+              <div class="column is-half">
+                  <!-- <p style="font-size: 1.5em"><b>Isaac</b></p> -->
+
+                  <div class="col-md-4 col-sm-4 col-xs-4">
+
+                      <img src="./static/videos/restaurant.png" width="24%" style="border-radius: 10px;" onclick="populateDemo(this, 1);">
+                      <img src="./static/videos/house.png" width="24%" style="border-radius: 10px;" onclick="populateDemo(this, 1);">
+                      <img src="./static/videos/office.png" width="24%" style="border-radius: 10px;" onclick="populateDemo(this, 1);">
+                      <img src="./static/videos/bookstore.png" width="24%" style="border-radius: 10px;" onclick="populateDemo(this, 1);">
+                      <img src="./static/videos/gamestore.png" width="24.%" style="border-radius: 10px;" onclick="populateDemo(this, 1);">
+                      <img src="./static/videos/shoestore.png" width="24%" style="border-radius: 10px;" onclick="populateDemo(this, 1);">
+                      <img src="./static/videos/grocery1.png" width="24%" style="border-radius: 10px;" onclick="populateDemo(this, 1);">
+                      <img src="./static/videos/hospital.png" width="24%" style="border-radius: 10px;" onclick="populateDemo(this, 1);">
+                  </div>
+              </div>
+              <div class="row border rounded" style="padding-top:2px; padding-bottom:12px;">
+                  <div class="col-md-6">
+                      <video id="demo-video-1" style="border-radius: 5px;" autoplay loop muted webkit-playsinline
+                          playsinline onclick="setAttribute('controls', 'true');">
+                          <source id="expandedImg-1" src="./static/videos/restaurant.mp4" type="video/mp4">
+                      </video>
+                  </div>
+              </div>
+          </div>
       </div>
-    </div>
-  </div>
 </section>
 
 
@@ -344,4 +342,48 @@
 </footer>
 
 </body>
+
+<script>
+
+  timeoutIds = [];
+
+  function populateDemo(imgs, num) {
+      // Get the expanded image
+      var expandImg = document.getElementById("expandedImg-" + num);
+      // Get the image text
+      var imgText = document.getElementById("imgtext-" + num);
+      var answer = document.getElementById("answer-" + num);
+
+      // Use the same src in the expanded image as the image being clicked on from the grid
+      expandImg.src = imgs.src.replace(".png", ".mp4");
+      var video = document.getElementById('demo-video-' + num);
+      // or video = $('.video-selector')[0];
+      video.pause()
+      video.load();
+      video.play();
+      video.removeAttribute('controls');
+
+      console.log(expandImg.src);
+      // Use the value of the alt attribute of the clickable image as text inside the expanded image
+      var qa = imgs.alt.split("[sep]");
+      imgText.innerHTML = qa[0];
+      answer.innerHTML = "";
+
+      // Show the container element (hidden with CSS)
+      expandImg.parentElement.style.display = "block";
+      for (timeoutId of timeoutIds) {
+          clearTimeout(timeoutId);
+      }
+
+      // NOTE (wliang): Modified from original to read from file instead
+      fetch(qa[1])
+          .then(response => response.text())
+          .then(contents => {
+              // Call the processData function and pass the contents as an argument
+              typeWriter(contents, 0, qa[0], num, "imgtext-", "answer-");
+          })
+          .catch(error => console.error('Error reading file:', error));
+  }
+</script>
+
 </html>
